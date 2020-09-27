@@ -17,15 +17,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 100vh;
-    padding: 1rem;
+    min-height: 100vh;
     font-family: sans-serif;
 }
 
 .container{
     font-family: inherit;
     max-width: 1000px;
-    width: 100%;
+    width: 95%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -36,50 +35,137 @@ body{
     background-color: #AEC5EB;
     width: 250px;
     height: 250px;
-    margin-right: 2rem;
     border-radius: var(--topLeft) var(--topRight) var(--bottomRight) var(--bottomLeft);
 }
 
 .aside {
     min-height: 100%;
-    height: 95vh;
     border: 3px solid #AEC5EB;
+    color: #fff;
     border-radius: 15px;
     padding: 1rem;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+
 }
 
 .form-control{
-    display: flex;
-    flex-direction: column;
+  margin: 2rem 0;
+  position: relative;
 }
 
 input[type=number] {
     padding: 0.25rem;
-    font-size: 18px;
     border: none;
     border-radius: 5px;
     margin-top: 0.25rem;
+    -moz-appearance: textfield;
 }
 
-input::placeholder{
-    font-size: 1rem;
-    opacity: .3;
-    font-family: inherit;
-}
-
-input:focus{
+input[type=number]:focus{
     outline: 2px solid #AEC5EB;
-    outline-offset: .1rem;
+    outline-offset: .01rem;
     -moz-outline-radius: 5px
 }
 
-.css-box{
-    background-color: #fff;
-    width: 250px;
-    height: 250px;
-    color: #000;
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+  input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  }
+  
+  input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+  
+    /* Hides the slider so custom styles can be added */
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+  }
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #367ebd;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #3071a9;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #367ebd;
+  }
+  
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #3071a9;
+    border-radius: 50px;
+    border: 0.2px solid #010101;
+  }
+  
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: #2a6495;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: #3071a9;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: #3071a9;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: #367ebd;
+  }
+
+.abs{
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    top: -1rem;
+    right: 0;
+}
+
+@media screen and (max-width: 700px){
+
+  .box {
+    transform: translateX(50%);
+  }
 }
